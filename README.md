@@ -16,3 +16,41 @@ Test Scenario 2: Middleware Implementation for JWT Authentication
         The middleware should extract the JWT from the Authorization header and validate it using a secret key.
         If the JWT is invalid or missing, the middleware should return a 401 status code with an appropriate error me
 
+
+# API CURLs
+
+User Register:
+    curl --location 'http://localhost:3000/api/users/register' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "mobile": "1234567898",
+        "email": "Test@gmail.com",
+        "password": "password",
+        "role": "admin"
+    }'
+
+User Login: 
+    curl --location 'http://localhost:3000/api/users/login' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email": "test@gmail.com",
+        "password": "password"
+    }'
+
+Add Customer:
+    curl --location 'http://localhost:3000/api/data/addCustomer' \
+    --header 'authorization: Bearer JWT-TOKEN-FROM-LOGIN' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "name": "Test customer",
+        "mobile": "8956457812",
+        "email": "rtest@test.com",
+        "location": "Mumbai"
+    }'
+
+Get Data: 
+    curl --location 'http://localhost:3000/api/data/getData?location=mumbai' \
+    --header 'authorization: Bearer Token'
+
+    curl --location 'http://localhost:3000/api/data/getData?customer_id='a8098c1a-f86e-11da-bd1a-00112444be1e' \
+    --header 'authorization: Bearer Token'
