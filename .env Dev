@@ -1,0 +1,8 @@
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=root
+DB_NAME=test
+
+PORT = 3000
+CLUSTERS = 1
+JWT_SECRET = billeasy
