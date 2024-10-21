@@ -20,6 +20,7 @@ Test Scenario 2: Middleware Implementation for JWT Authentication
 # API CURLs
 
 User Register:
+
     curl --location 'http://localhost:3000/api/users/register' \
     --header 'Content-Type: application/json' \
     --data-raw '{
@@ -30,6 +31,7 @@ User Register:
     }'
 
 User Login: 
+
     curl --location 'http://localhost:3000/api/users/login' \
     --header 'Content-Type: application/json' \
     --data-raw '{
@@ -38,6 +40,7 @@ User Login:
     }'
 
 Add Customer:
+
     curl --location 'http://localhost:3000/api/data/addCustomer' \
     --header 'authorization: Bearer JWT-TOKEN-FROM-LOGIN' \
     --header 'Content-Type: application/json' \
@@ -49,6 +52,7 @@ Add Customer:
     }'
 
 Get Data: 
+
     curl --location 'http://localhost:3000/api/data/getData?location=mumbai' \
     --header 'authorization: Bearer Token'
 
